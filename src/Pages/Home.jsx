@@ -98,16 +98,16 @@ export default function Home() {
               Cryoko stands as a premier cryotherapy destination in Chennai,
               offering an exclusive experience in wellness and recovery.
             </p>
-            <ul className="list-unstyled ">
+            <ul className="list-unstyled">
               <li>
            
-                          <FontAwesomeIcon icon={faSnowflake}    className="text-primary me-2"/>
+                          <FontAwesomeIcon icon={faSnowflake} shake className="text-primary me-2"/>
                 Nestled within our opulent studio lies the world’s most advanced
                 whole-body cryotherapy chamber.
               </li>
               
               <li>
-              <FontAwesomeIcon icon={faHeartbeat}    className="text-danger me-2"/>
+              <FontAwesomeIcon icon={faHeartbeat}  beatFade  className="text-danger me-2 mt-3"/>
               Tailored recovery and wellness regimens cater to diverse needs:
               </li>
               <ul className="ms-4">
@@ -138,7 +138,7 @@ export default function Home() {
                 </li>
               </ul>
               <li>
-              <FontAwesomeIcon icon={faSnowflake}   className="text-primary me-2"/>
+              <FontAwesomeIcon icon={faSnowflake}  shake className="text-primary me-2 mt-3"/>
               Trusted by a diverse clientele seeking transformative wellness
                 benefits.
               </li>
