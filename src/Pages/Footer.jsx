@@ -145,7 +145,7 @@ export default function Footer() {
             <div className="col-12">
               <p className="text-end">
                 <a href="https://wa.me/+917418147264" className=" fixed-icon">
-                  <FontAwesomeIcon icon={faWhatsapp} beat size="3x" />
+                  <FontAwesomeIcon icon={faWhatsapp} beat size="2x" />
                 </a>
               </p>
             </div>

@@ -11,6 +11,7 @@ import Image3 from "../Images/Image3.jpg";
 import "../App.css";
 import { useInView } from "react-intersection-observer";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSnowflake,
@@ -19,6 +20,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   const [hasViewed, setHasViewed] = useState({
     myElement: false,
     secondElement: false,
@@ -255,7 +258,7 @@ export default function Home() {
                   alt="Image 3"
                   className="img-fluid border border-white rounded-1"
                 />
-                <p className="text-primary text-center fs-5 fw-bold mt-2">
+                <p className="text-primary text-center fs-5 fw-bold mt-2 cryotherapy-style">
                   Cryotherapy
                 </p>
                 <p className="m-0 p-0 fw-light text-center">
@@ -270,7 +273,7 @@ export default function Home() {
                   alt="Image 3"
                   className="img-fluid border border-white rounded-1"
                 />
-                <p className="text-primary text-center fs-5 fw-bold mt-2">
+                <p className="text-primary text-center fs-5 fw-bold mt-2 cryotherapy-style">
                   Cryotherapy
                 </p>
                 <p className="m-0 p-0 fw-light text-center">
@@ -303,7 +306,7 @@ export default function Home() {
                   alt="Image 3"
                   className="img-fluid border border-white rounded-1"
                 />
-                <p className="text-primary text-center fs-5 fw-bold mt-2">
+                <p className="text-primary text-center fs-5 fw-bold mt-2 cryotherapy-style">
                   Cryotherapy
                 </p>
                 <p className="m-0 p-0 fw-light text-center">
@@ -318,7 +321,7 @@ export default function Home() {
                   alt="Image 3"
                   className="img-fluid border border-white rounded-1"
                 />
-                <p className="text-primary text-center fs-5 fw-bold mt-2">
+                <p className="text-primary text-center fs-5 fw-bold mt-2 cryotherapy-style">
                   Cryotherapy
                 </p>
                 <p className="m-0 p-0 fw-light text-center">
