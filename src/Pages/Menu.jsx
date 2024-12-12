@@ -16,6 +16,7 @@ function Menu() {
   .dropdown-item:hover{
     transform: scale(1.01) !important;  
     border-left: 3px solid blue;
+    font-weight: bold;
   transition: transform 0.1s ease-in-out;  
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }`;
   return (
@@ -39,17 +40,19 @@ function Menu() {
               style={{ maxHeight: "400px", textAlign: "center" }}
               navbarScroll
             >
-              <Nav.Link href="#action1" className="fw-bold">
+              <Nav.Link href="#action1" className="fw-bold text-dark">
                 Home
               </Nav.Link>
-              <Nav.Link href="#action2" className="ms-lg-3 fw-bold">
+              <Nav.Link href="#action2" className="ms-lg-3 fw-bold text-dark">
                 About us
               </Nav.Link>
               <NavDropdown
                 title={
                   <span>
                     {" "}
-                    <span className="ms-lg-3 fw-bold">Cryotherapy</span>
+                    <span className="ms-lg-3 fw-bold text-dark">
+                      Cryotherapy
+                    </span>
                   </span>
                 }
                 id="navbarScrollingDropdown"
@@ -60,45 +63,24 @@ function Menu() {
                 <NavDropdown.Item href="#action4">
                   WBC vs Ice Bath{" "}
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action5">
-                  FAQ
-                </NavDropdown.Item>
+                <NavDropdown.Item href="#action5">FAQ</NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link href="#action2" className="ms-lg-3 fw-bold">
+              <Nav.Link href="#action2" className="ms-lg-3 fw-bold text-dark">
                 Services
               </Nav.Link>
 
-              <Nav.Link href="#action2" className="ms-lg-3 fw-bold">
+              <Nav.Link href="#action2" className="ms-lg-3 fw-bold text-dark">
                 Benefits
               </Nav.Link>
-              {/* <NavDropdown
-                title={
-                  <span>
-                    {" "}
-                    <span className="ms-lg-3 fw-bold">Benefits</span>
-                  </span>
-                }
-                id="navbarScrollingDropdown"
-              >
-                <NavDropdown.Item href="#action3">
-                  Wellness
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Weight loss
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action5">
-                  Beauty
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action5">
-                  Pain Reduction
-                </NavDropdown.Item>
-            
-              </NavDropdown> */}
-              <Nav.Link href="#action2" className=" ms-lg-3 fw-bold">
+
+              <Nav.Link href="#action2" className=" ms-lg-3 fw-bold text-dark">
                 Blog
               </Nav.Link>
-              <Nav.Link href="#action2" className=" ms-lg-3 me-lg-5 fw-bold">
+              <Nav.Link
+                href="#action2"
+                className=" ms-lg-3 me-lg-5 fw-bold text-dark"
+              >
                 Reach us
               </Nav.Link>
             </Nav>

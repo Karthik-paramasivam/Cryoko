@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/autoplay";
 import { EffectCreative, Pagination, Autoplay } from "swiper/modules";
-import logo from "../Images/logo.png";
 import Image1 from "../Images/CryokoImage1.jpg";
 import Image2 from "../Images/Image2.jpeg";
 import Image3 from "../Images/Image3.jpg";
@@ -35,13 +34,13 @@ export default function Home() {
   });
 
   const { ref: myRef2, inView: secondElementIsVisible } = useInView({
-  triggerOnce: true,
-  onChange: (inView) => {
-    if (inView && !hasViewed.secondElement) {
-      setHasViewed((prev) => ({ ...prev, secondElement: true }));
-    }
-  },
-});
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.secondElement) {
+        setHasViewed((prev) => ({ ...prev, secondElement: true }));
+      }
+    },
+  });
 
   return (
     <div className="container-fluid border border-white">
@@ -224,13 +223,12 @@ export default function Home() {
       </div>
 
       <div className="mt-5 container-fluid">
-        {/* <div className="row"> */}
         <div
-  className={`row slide-in-left ${
-    hasViewed.secondElement ? "animate-slide-in" : ""
-  }`}
-  ref={myRef2}
->
+          className={`row slide-in-left ${
+            hasViewed.secondElement ? "animate-slide-in" : ""
+          }`}
+          ref={myRef2}
+        >
           <div className="col col-lg-12">
             <p className="text-primary fs-4 fw-bold text-center">
               CRYOKO AMAZING FEATURES
@@ -337,8 +335,8 @@ export default function Home() {
       <div className="container-fluid m-0 p-0">
         <div className="row mt-5">
           <div className="col-12 m-0 p-0">
-        <Footer />
-        </div>
+            <Footer />
+          </div>
         </div>
       </div>
     </div>
