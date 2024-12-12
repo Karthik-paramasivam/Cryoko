@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/Cryoko/static/css/main.4d7a3333.css",
-    "main.js": "/Cryoko/static/js/main.b771c66f.js",
+    "main.js": "/Cryoko/static/js/main.ac176ebf.js",
     "static/js/488.c4785fdb.chunk.js": "/Cryoko/static/js/488.c4785fdb.chunk.js",
     "static/media/CryokoImage1.jpg": "/Cryoko/static/media/CryokoImage1.339c17debc085afb9cbc.jpg",
     "static/media/Image2.jpeg": "/Cryoko/static/media/Image2.759a3ba665e2df348ec4.jpeg",
     "static/media/logo.svg": "/Cryoko/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/Cryoko/index.html",
     "main.4d7a3333.css.map": "/Cryoko/static/css/main.4d7a3333.css.map",
-    "main.b771c66f.js.map": "/Cryoko/static/js/main.b771c66f.js.map",
+    "main.ac176ebf.js.map": "/Cryoko/static/js/main.ac176ebf.js.map",
     "488.c4785fdb.chunk.js.map": "/Cryoko/static/js/488.c4785fdb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4d7a3333.css",
-    "static/js/main.b771c66f.js"
+    "static/js/main.ac176ebf.js"
   ]
 }
