@@ -129,7 +129,7 @@ export default function Footer() {
             <div className="text-start text-md-end text-xxl-center ">
               <span className="ms-1 me-1 me-md-2 me-lg-3 brand-image logodiv">
                 <a
-                  href="https://wa.me/917502584493"
+                  href="https://wa.me/+917418147264"
                   className="text-white"
                   //   onClick={handlesocialClick}
                 >
@@ -143,7 +143,7 @@ export default function Footer() {
 
               <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
                 <a
-                  href="https://www.instagram.com/studio37wedding/"
+                  href="#"
                   className="text-white"
                   //   onClick={handlesocialClick}
                 >
@@ -157,7 +157,7 @@ export default function Footer() {
 
               <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
                 <a
-                  href="https://www.facebook.com/studio37wedding"
+                  href="#"
                   className="text-white"
                   //   onClick={handlesocialClick}
                 >
@@ -171,7 +171,7 @@ export default function Footer() {
 
               <span className="ms-1 me-md-2 me-lg-3 brand-image logodiv">
                 <a
-                  href="https://www.youtube.com/results?search_query=studio37wedding"
+                  href="#"
                   className="text-white"
                   //   onClick={handlesocialClick}
                 >
@@ -182,22 +182,10 @@ export default function Footer() {
                   />
                 </a>
               </span>
+           
               <span className="me-md-2 me-lg-3 brand-image logodiv">
                 <a
-                  href="https://x.com/studio37wedding"
-                  className="text-white"
-                  //   onClick={handlesocialClick}
-                >
-                  <FontAwesomeIcon
-                    icon={faXTwitter}
-                    size="xl"
-                    className="p-1 social-image Xlogo"
-                  />
-                </a>
-              </span>
-              <span className="me-md-2 me-lg-3 brand-image logodiv">
-                <a
-                  href="https://x.com/studio37wedding"
+                  href="#"
                   className="text-white"
                   //   onClick={handlesocialClick}
                 >
@@ -218,7 +206,7 @@ export default function Footer() {
                 <div className="col-12">
                   <p className="text-end">
                     <a
-                      href="https://wa.me/917502584493"
+                      href="https://wa.me/+917418147264"
                       className=" fixed-icon"
                     >
                       <FontAwesomeIcon icon={faWhatsapp} beat size="3x" />
