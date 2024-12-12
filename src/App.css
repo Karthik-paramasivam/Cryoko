@@ -38,3 +38,40 @@
 }
 
 
+.cryotherapy-style:hover {
+  transform: scale(1.05);
+  transition: transform 0.1s ease-in-out;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.9s ease-in-out;
+}
+
+.animate-slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fixed-icon {
+  position: fixed;
+  bottom: 20px;  /* Adjust this value to position the icon vertically */
+  right: 20px;   /* Adjust this value to position the icon horizontally */
+  z-index: 1000; /* Ensure the icon stays on top of other content */
+  
+  color: #25D366;
+
+}

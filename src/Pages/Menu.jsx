@@ -7,11 +7,17 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "../Images/logo.png";
 
 function Menu() {
-  const styl = `.nav-link:hover {
+  const styl = `.nav-link:hover{
   transform: scale(1.05) !important;  
   transition: transform 0.1s ease-in-out;  
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
-}`;
+
+}
+  .dropdown-item:hover{
+    transform: scale(1.01) !important;  
+    border-left: 3px solid blue;
+  transition: transform 0.1s ease-in-out;  
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }`;
   return (
     <>
       <style>{styl}</style>

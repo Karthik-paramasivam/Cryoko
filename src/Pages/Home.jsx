@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "react-bootstrap";
 import "swiper/css";
@@ -7,33 +7,50 @@ import "swiper/css/autoplay";
 import { EffectCreative, Pagination, Autoplay } from "swiper/modules";
 import logo from "../Images/logo.png";
 import Image1 from "../Images/CryokoImage1.jpg";
+import Image2 from "../Images/Image2.jpeg";
+import Image3 from "../Images/Image3.jpg";
+import "../App.css";
+import { useInView } from "react-intersection-observer";
+import Footer from "./Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSnowflake, faHeartbeat, faCircleCheck} from "@fortawesome/free-solid-svg-icons";
-
+import {
+  faSnowflake,
+  faHeartbeat,
+  faCircleCheck,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
-  const [changingText, setChangingText] = useState("Body");
+  const [hasViewed, setHasViewed] = useState({
+    myElement: false,
+    secondElement: false,
+  });
 
-  //   useEffect(() => {
-  //     const texts = ["Body", "Mind", "Soul"];
-  //     let index = 0;
+  const { ref: myRef, inView: myElementIsVisible } = useInView({
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewed.myElement) {
+        setHasViewed((prev) => ({ ...prev, myElement: true }));
+      }
+    },
+  });
 
-  //     const interval = setInterval(() => {
-  //       index = (index + 1) % texts.length; // Loop through the texts array
-  //       setChangingText(texts[index]);
-  //     }, 2000); // Change every 2 seconds
-
-  //     return () => clearInterval(interval); // Clean up on component unmount
-  //   }, []);
+  const { ref: myRef2, inView: secondElementIsVisible } = useInView({
+  triggerOnce: true,
+  onChange: (inView) => {
+    if (inView && !hasViewed.secondElement) {
+      setHasViewed((prev) => ({ ...prev, secondElement: true }));
+    }
+  },
+});
 
   return (
-    <div className="container-fluid border border-danger">
-      <div className="container border border-primary">
+    <div className="container-fluid border border-white">
+      <div className="container-fluid border border-white">
         <div className="row">
           <div className="col">
-            <div className="container-fluid mt-4">
-              <div className="row mt-4">
-                <div className="col col-12 m-0 p-0">
+            <div className="container ">
+              <div className="row">
+                <div className="col col-12 m-auto text-center">
                   <Swiper
                     effect="creative"
                     grabCursor={true}
@@ -53,27 +70,27 @@ export default function Home() {
                     }}
                     modules={[EffectCreative, Pagination, Autoplay]}
                     speed={1500}
-                    className="mySwiper border border-danger"
+                    className="mySwiper border border-white"
                   >
                     <SwiperSlide>
                       <img
-                        src={logo}
-                        alt="Image1"
-                        className="img-fluid border border-light rounded slider-image"
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img
-                        src={logo}
+                        src={Image2}
                         alt="Image2"
-                        className="img-fluid border border-light rounded slider-image"
+                        className="img-fluid border border-light rounded slider-image w-100"
                       />
                     </SwiperSlide>
                     <SwiperSlide>
                       <img
-                        src={logo}
+                        src={Image2}
+                        alt="Image2"
+                        className="img-fluid border border-light rounded slider-image w-100"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img
+                        src={Image2}
                         alt="Image3"
-                        className="img-fluid border border-light rounded slider-image"
+                        className="img-fluid border border-light rounded slider-image w-100"
                       />
                     </SwiperSlide>
                   </Swiper>
@@ -83,14 +100,18 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <div className="mt-5 container">
-        <div className="row">
+        <div
+          className={`row  slide-in-left  ${
+            hasViewed.myElement ? "animate-slide-in" : ""
+          }`}
+          ref={myRef}
+        >
           <div className="col-12 col-lg-6">
             <p className="fw-bold text-primary fs-4">CRYOKO WELLNESS STUDIO</p>
             <p className="fw-bold fs-5">Cryotherapy</p>
-            {/* <p>
-              Rejuvenate Your <span className="text-uppercase">{changingText}</span>
-            </p> */}
+
             <p className="fw-bold text-justify fs-6">
               Rejuvenate Your Mind, Body & Soul
             </p>
@@ -100,53 +121,94 @@ export default function Home() {
             </p>
             <ul className="list-unstyled">
               <li>
-           
-                          <FontAwesomeIcon icon={faSnowflake} shake className="text-primary me-2"/>
+                <FontAwesomeIcon
+                  icon={faSnowflake}
+                  shake
+                  className="text-primary me-2"
+                />
                 Nestled within our opulent studio lies the world’s most advanced
                 whole-body cryotherapy chamber.
               </li>
-              
+
               <li>
-              <FontAwesomeIcon icon={faHeartbeat}  beatFade  className="text-danger me-2 mt-3"/>
-              Tailored recovery and wellness regimens cater to diverse needs:
+                <FontAwesomeIcon
+                  icon={faHeartbeat}
+                  beatFade
+                  className="text-danger me-2 mt-3 "
+                />
+                Tailored recovery and wellness regimens cater to diverse needs:
               </li>
               <ul className="ms-4">
                 <li>
-                  <FontAwesomeIcon icon={faCircleCheck}    className="text-success me-2"/>
-
-                  Alleviating inflammation
+                  <span>
+                    <FontAwesomeIcon
+                      icon={faCircleCheck}
+                      className="text-success me-2"
+                    />
+                  </span>
+                  <span className="fw-bold">Alleviating inflammation</span>
                 </li>
                 <li>
-                <FontAwesomeIcon icon={faCircleCheck}    className="text-success me-2"/>
-                Enhancing muscle recovery
+                  <span>
+                    <FontAwesomeIcon
+                      icon={faCircleCheck}
+                      className="text-success me-2"
+                    />
+                  </span>
+                  <span className="fw-bold"> Enhancing muscle recovery</span>
                 </li>
                 <li>
-                <FontAwesomeIcon icon={faCircleCheck}    className="text-success me-2"/>
-                Combating arthritis and joint pains
+                  <span>
+                    <FontAwesomeIcon
+                      icon={faCircleCheck}
+                      className="text-success me-2"
+                    />
+                  </span>
+                  <span className="fw-bold">
+                    Combating arthritis and joint pains
+                  </span>
                 </li>
                 <li>
-                <FontAwesomeIcon icon={faCircleCheck}    className="text-success me-2"/>
-                Boosting performance
+                  <span>
+                    <FontAwesomeIcon
+                      icon={faCircleCheck}
+                      className="text-success me-2"
+                    />
+                  </span>
+                  <span className="fw-bold">Boosting performance</span>
                 </li>
                 <li>
-                <FontAwesomeIcon icon={faCircleCheck}    className="text-success me-2"/>
-                Defying aging
+                  <span>
+                    <FontAwesomeIcon
+                      icon={faCircleCheck}
+                      className="text-success me-2"
+                    />
+                  </span>
+                  <span className="fw-bold">Defying aging</span>
                 </li>
                 <li>
-                <FontAwesomeIcon icon={faCircleCheck}    className="text-success me-2"/>
-                Achieving weight loss goals
+                  <span>
+                    <FontAwesomeIcon
+                      icon={faCircleCheck}
+                      className="text-success me-2"
+                    />
+                  </span>
+                  <span className="fw-bold fs-6">
+                    Achieving weight loss goals
+                  </span>
                 </li>
               </ul>
               <li>
-              <FontAwesomeIcon icon={faSnowflake}  shake className="text-primary me-2 mt-3"/>
-              Trusted by a diverse clientele seeking transformative wellness
+                <FontAwesomeIcon
+                  icon={faSnowflake}
+                  shake
+                  className="text-primary me-2 mt-3"
+                />
+                Trusted by a diverse clientele seeking transformative wellness
                 benefits.
               </li>
             </ul>
-            {/* <p>
-              Our meticulously crafted programs are designed to help you achieve
-              your health and wellness goals with ease.
-            </p> */}
+
             <p>
               <Button>More About Us</Button>
             </p>
@@ -158,6 +220,125 @@ export default function Home() {
               className="img-fluid border rounded-3 mt-lg-4"
             />
           </div>
+        </div>
+      </div>
+
+      <div className="mt-5 container-fluid">
+        {/* <div className="row"> */}
+        <div
+  className={`row slide-in-left ${
+    hasViewed.secondElement ? "animate-slide-in" : ""
+  }`}
+  ref={myRef2}
+>
+          <div className="col col-lg-12">
+            <p className="text-primary fs-4 fw-bold text-center">
+              CRYOKO AMAZING FEATURES
+            </p>
+            <div className="d-flex flex-column flex-lg-row justify-content-center align-items-stretch flex-wrap gap-3">
+              <div className="card shadow-sm border border-white  col-12 col-lg-3">
+                <img
+                  src={Image3}
+                  alt="Image 3"
+                  className="img-fluid border border-white rounded-1"
+                />
+                <p className="text-primary text-center fs-5 fw-bold mt-2 cryotherapy-style">
+                  Cryotherapy
+                </p>
+                <p className="m-0 p-0 fw-light text-center">
+                  Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit amet
+                  conse Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit
+                  amet conse
+                </p>
+              </div>
+              <div className="card shadow-sm border border-white col-12 col-lg-3">
+                <img
+                  src={Image3}
+                  alt="Image 3"
+                  className="img-fluid border border-white rounded-1"
+                />
+                <p className="text-primary text-center fs-5 fw-bold mt-2">
+                  Cryotherapy
+                </p>
+                <p className="m-0 p-0 fw-light text-center">
+                  Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit amet
+                  conse Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit
+                  amet conse
+                </p>
+              </div>
+              <div className="card shadow-sm border border-white col-12 col-lg-3">
+                <img
+                  src={Image3}
+                  alt="Image 3"
+                  className="img-fluid border border-white rounded-1"
+                />
+                <p className="text-primary text-center fs-5 fw-bold mt-2">
+                  Cryotherapy
+                </p>
+                <p className="m-0 p-0 fw-light text-center">
+                  Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit amet
+                  conse Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit
+                  amet conse
+                </p>
+              </div>
+            </div>
+
+            <div className=" mt-3 d-flex flex-column flex-lg-row justify-content-center align-items-stretch flex-wrap gap-3">
+              <div className="card shadow-sm border border-white  col-12 col-lg-3">
+                <img
+                  src={Image3}
+                  alt="Image 3"
+                  className="img-fluid border border-white rounded-1"
+                />
+                <p className="text-primary text-center fs-5 fw-bold mt-2 cryotherapy-style">
+                  Cryotherapy
+                </p>
+                <p className="m-0 p-0 fw-light text-center">
+                  Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit amet
+                  conse Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit
+                  amet conse
+                </p>
+              </div>
+              <div className="card shadow-sm border border-white col-12 col-lg-3">
+                <img
+                  src={Image3}
+                  alt="Image 3"
+                  className="img-fluid border border-white rounded-1"
+                />
+                <p className="text-primary text-center fs-5 fw-bold mt-2">
+                  Cryotherapy
+                </p>
+                <p className="m-0 p-0 fw-light text-center">
+                  Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit amet
+                  conse Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit
+                  amet conse
+                </p>
+              </div>
+              <div className="card shadow-sm border border-white col-12 col-lg-3">
+                <img
+                  src={Image3}
+                  alt="Image 3"
+                  className="img-fluid border border-white rounded-1"
+                />
+                <p className="text-primary text-center fs-5 fw-bold mt-2">
+                  Cryotherapy
+                </p>
+                <p className="m-0 p-0 fw-light text-center">
+                  Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit amet
+                  conse Lorem ipsum dolor sit amet conse Lorem ipsum dolor sit
+                  amet conse
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container-fluid m-0 p-0">
+        <div className="row mt-5">
+          <div className="col-12 m-0 p-0">
+        <Footer />
+        </div>
         </div>
       </div>
     </div>
