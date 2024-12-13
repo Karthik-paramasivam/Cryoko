@@ -3,21 +3,17 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Menu from './Pages/Menu';
 import Home from "./Pages/Home"
-import About from './Pages/About';
+import About from './Pages/Aboutus';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'; 
 
 
 
 function App() {
   return (
-  //  <div>
-  //   <Menu />
-  //   <Home />
-  //   <About />
-  //  </div>
+
   <>
-<Menu />
 <Router> 
+<Menu />
 <Routes>
 
   <Route path="/" element={<Home  />} /> 
